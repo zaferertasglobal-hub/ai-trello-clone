@@ -1,73 +1,62 @@
-# React + TypeScript + Vite
+# 🤖 AI-Trello Pro: Akıllı Görev Yönetim Sistemi
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+AI-Trello Pro, modern web teknolojileri ve Yapay Zeka (AI) entegrasyonu ile geliştirilmiş, sürükle-bırak (Drag & Drop) mantığına dayalı profesyonel bir proje yönetim aracıdır.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## React Compiler
+## 🌟 Öne Çıkan Özellikler
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+* **Sürükle ve Bırak (Dnd-Kit):** Kartların kolonlar arası geçişi ve sıralanması için pürüzsüz, yüksek performanslı sürükle-bırak deneyimi.
+* **Google Gemini AI Entegrasyonu:** Bir görev "Bitenler" kolonuna taşındığında, AI tarafından üretilen gerçek zamanlı motivasyon ve tebrik mesajları.
+* **Veri Kalıcılığı (Local Storage):** Tarayıcı kapatılsa veya sayfa yenilense bile tüm görevleriniz bilgisayarınızda güvenle saklanır.
+* **Dinamik İstatistik Paneli:** Toplam görev sayısı ve tamamlanma oranını anlık olarak takip eden analiz paneli.
+* **TypeScript Güvencesi:** Tüm veri modelleri TypeScript interface'leri ile tanımlanmış, hata payı minimuma indirilmiş kod yapısı.
 
-## Expanding the ESLint configuration
+## 🛠️ Kullanılan Teknolojiler
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+| Teknoloji | Kullanım Amacı |
+| :--- | :--- |
+| **React 18** | UI ve Component tabanlı mimari |
+| **TypeScript** | Statik tip denetimi ve güvenli kod yazımı |
+| **Tailwind CSS v4** | Modern ve hızlı stil yönetimi |
+| **@dnd-kit** | Erişilebilir ve performanslı sürükle-bırak altyapısı |
+| **Gemini AI API** | Üretken yapay zeka desteği |
+| **Vite** | Hızlı geliştirme ve build aracı |
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 🚀 Kurulum ve Çalıştırma
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+Projeyi yerel bilgisayarınızda çalıştırmak için şu adımları izleyin:
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+1.  **Repoyu klonlayın:**
+    ```bash
+    git clone [https://github.com/KULLANICI_ADIN/ai-trello-clone.git](https://github.com/KULLANICI_ADIN/ai-trello-clone.git)
+    cd ai-trello-clone
+    ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+2.  **Bağımlılıkları yükleyin:**
+    ```bash
+    npm install
+    ```
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+3.  **Gemini API Anahtarını Ekleyin:**
+    `src/App.tsx` dosyası içerisindeki `BURAYA_GEMINI_API_KEY_GELECEK` alanına kendi Google AI Studio anahtarınızı yapıştırın.
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+4.  **Geliştirme modunda başlatın:**
+    ```bash
+    npm run dev
+    ```
+
+## 🏗️ Proje Mimarisi
+
+* `src/components/`: Atomik bileşenler (TaskCard, Column, AddTask).
+* `src/types.ts`: Tüm proje için merkezi tip tanımlamaları.
+* `src/App.tsx`: State yönetimi, Drag-and-Drop mantığı ve AI entegrasyonunun kalbi.
+
+## 📈 Gelecek Planları
+
+- [ ] Kullanıcı giriş sistemi (Firebase veya Auth.js)
+- [ ] Görevlere etiket (label) ve öncelik seviyesi ekleme
+- [ ] Karanlık mod (Dark Mode) desteği
+
+---
+Made with ❤️ by [Adın Soyadın]
